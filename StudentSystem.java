@@ -27,6 +27,7 @@ public class StudentSystem {
     }
 }
 
+// Node class and constructor
 class Node {
     int rollNumber;
     String name;
@@ -43,13 +44,16 @@ class Node {
     }
 }
 
+// class with all methods
 class StudentList {
     private Node head;
 
+    // constructor for this class to initialise head
     public StudentList() {
         head = null;
     }
 
+    // Method to add student at particular position
     public void addStudent(int rollNumber, String name, int age, char grade, int position) {
         Node newNode = new Node(rollNumber, name, age, grade);
         if (position == 0 || head == null) {
@@ -67,6 +71,7 @@ class StudentList {
         }
     }
 
+    // Method to delete student from particular postion by changing references
     public void deleteStudent(int rollNumber) {
         if (head == null) return;
         if (head.rollNumber == rollNumber) {
@@ -82,6 +87,7 @@ class StudentList {
         }
     }
 
+    // Traversing the list to search
     public void searchStudent(int rollNumber) {
         Node temp = head;
         while (temp != null) {
@@ -94,6 +100,7 @@ class StudentList {
         System.out.println("Student with Roll Number " + rollNumber + " not found.");
     }
 
+    // Traversing the list to search by roll number and update grade
     public void updateGrade(int rollNumber, char newGrade) {
         Node temp = head;
         while (temp != null) {
@@ -105,6 +112,7 @@ class StudentList {
         }
     }
 
+    // Method to display students
     public void displayStudents() {
         Node temp = head;
         while (temp != null) {
